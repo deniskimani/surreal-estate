@@ -1,0 +1,82 @@
+.add-property{
+    margin: 10vh 10vw;
+    
+}
+.add-property-child{
+    width: 40vw;
+    display: inline-block;
+    width: 50%;
+    background-color: rgb(217, 216, 216);
+    padding: 50px;
+    border-radius: 5px; 
+}
+.form{
+    width: 100%;
+    background-color: rgb(217, 216, 216);
+    padding: 50px;
+    border-radius: 5px;    
+}
+
+.left-panel{
+    width: 50%;
+    float: left;
+}
+.right-panel{
+    width: 50%;
+    float: right;
+
+}
+label, input, select{
+    display: block;
+
+}
+label{
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: small;
+    font-weight: 600;
+    color: rgb(69, 69, 69);
+
+}
+
+input{
+    width: 80%;
+    margin-top: 5px;
+    height: 25px;
+    color: rgb(46, 46, 46);
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+} 
+
+select{
+    width: 85%;
+    margin-top: 5px;
+    height: 30px;
+    color: rgb(46, 46, 46);
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+}
+
+
+input:focus{
+    outline: 3px solid rgba(10, 10, 243, 0.353);
+}
+select:focus{
+    outline: 3px solid rgba(10, 10, 243, 0.353);
+}
+
+
+.add-btn{
+    margin-top: 22px;
+    margin-right: 15%;
+    background-color: #774872;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 35px;
+    border: 1px solid gray;
+    float: right;
+    
+}

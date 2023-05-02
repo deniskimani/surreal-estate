@@ -1,0 +1,35 @@
+.nav-bar{
+    box-shadow: 0 6px 9px -2px gray;
+    background-color: #ffff;
+    display: flex;
+    height: 70px;
+    
+}
+
+.nav-bar img{
+    height: 70px;
+    padding: 0;
+    margin: 0;
+}
+.links{
+    list-style-type: none;
+    margin-left: 100px;
+    margin-top: 30px;
+    
+}
+.links li{
+    list-style: none;
+    display: inline;
+    padding: 20px;
+}
+
+.item {
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.item:hover {
+    color: #774872;
+}
