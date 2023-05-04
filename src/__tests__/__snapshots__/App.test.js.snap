@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="nav-bar"
+    >
+      <a
+        class="logo"
+        href="/"
+      >
+        <img
+          alt="logo"
+          src="https://mcrcodes.s3.eu-west-2.amazonaws.com/course/surreal-estate/logo.png"
+        />
+      </a>
+      <ul
+        class="links"
+      >
+        <li>
+          <a
+            class="item"
+            href="/"
+          >
+            View Properties
+          </a>
+        </li>
+        <li>
+          <a
+            class="item"
+            href="/add-property"
+          >
+            Add Property
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>
+        Properties
+      </h3>
+    </div>
+  </div>
+</DocumentFragment>
+`;

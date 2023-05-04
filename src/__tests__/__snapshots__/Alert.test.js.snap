@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test alert component does not render an error or a success message if message props is empty 1`] = `
+<DocumentFragment>
+  <div
+    class="alert alert-error"
+  />
+</DocumentFragment>
+`;
+
+exports[`test alert component test alert 1`] = `[Function]`;

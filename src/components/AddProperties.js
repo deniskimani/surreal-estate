@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/add-property.css";
+import axios from "axios";
+import Alert from "./Alert";
 
 const AddProperties = () => {
   const initialState = {
@@ -12,18 +14,44 @@ const AddProperties = () => {
       email: "",
       price: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
   const handAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    setAlert({ message: "", isSuccess: false });
+
+    axios
+      .post("http://localhost:3000/api/v1/PropertyListing", {
+        ...fields,
+      })
+      .then((response) => {
+        if (response.status === 201) {
+          setAlert({ message: "Property added!", isSuccess: true });
+        }
+      })
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+      });
   };
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
   return (
     <div className="add-property">
+      <h3>Add a property</h3>
       <div className="add-property-child">
+        {alert.message && (
+          <Alert message={alert.message} success={alert.isSuccess} />
+        )}
+
         <form onSubmit={handAddProperty}>
           <div className="left-panel">
             <label htmlFor="title">
@@ -66,6 +94,7 @@ const AddProperties = () => {
               >
                 <option value="Manchester">Manchester</option>
                 <option value="Leeds">Leeds</option>
+                <option value="Exeter">Exeter</option>
               </select>
             </label>
           </div>

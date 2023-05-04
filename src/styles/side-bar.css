@@ -1,0 +1,18 @@
+.side-bar{
+    margin-top: 0;
+    width: 10vw;
+    background-color: #ffffff;
+    height: 120vh;
+    padding: 20px 40px;
+
+    
+}
+h4{
+    text-decoration: underline;
+    color: rgb(49, 49, 49);
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: rgb(79, 79, 79);
+}

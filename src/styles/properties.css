@@ -1,0 +1,24 @@
+.properties {
+
+    display: grid;
+    grid-template-columns: 15% 85%;
+    
+  }
+.properties-first-child{
+    margin-left: 2em;
+}
+h3{
+    padding-left: 1em;
+}
+.property{
+   display: grid;
+   grid-template-columns: auto auto auto;
+   padding: 0.5rem;
+   box-sizing: border-box;   
+}
+.alert-box{
+    margin-left: 1em ;
+}
+.side-b{
+    margin: 0;
+}
