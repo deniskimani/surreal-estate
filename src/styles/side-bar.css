@@ -22,3 +22,20 @@ a{
 
     
 }
+.side-bar input {
+    width: 91%;
+    border-radius: 2px;
+}
+.side-bar button{
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    height: 29px;
+    padding: 7px 8px;
+    background-color: #774872;
+    border: 1px solid #774872;
+    
+}
+.icon {
+    color: #ffffff;
+}
