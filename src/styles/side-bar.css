@@ -1,18 +1,24 @@
 .side-bar{
-    margin-top: 0;
-    width: 10vw;
+    margin-top: 1px;
+    width: 14vw;
     background-color: #ffffff;
     height: 120vh;
-    padding: 20px 40px;
-
+    padding: 10px 20px;
+    position: fixed;
+    top: 70px;
+    z-index:100;
     
 }
 h4{
-    text-decoration: underline;
+    
     color: rgb(49, 49, 49);
 }
 a{
     display: block;
     text-decoration: none;
     color: rgb(79, 79, 79);
+    margin-top: 7px;
+    font-weight: 500;
+
+    
 }

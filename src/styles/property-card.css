@@ -1,8 +1,10 @@
 .property-card{
-    margin: 10px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #fff;
 }
 .card-img {
-    background-color: rgb(215, 215, 215);
+    background-color: #eceef1;
     text-align: center;
     padding: 30px 0;
 }

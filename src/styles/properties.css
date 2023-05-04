@@ -1,11 +1,7 @@
-.properties {
-
-    display: grid;
-    grid-template-columns: 15% 85%;
-    
-  }
 .properties-first-child{
-    margin-left: 2em;
+    width: 80%;
+    margin-top: 7%;
+    margin-left: 18%;
 }
 h3{
     padding-left: 1em;

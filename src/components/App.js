@@ -10,6 +10,7 @@ import {
   faBath,
   faSterlingSign,
   faEnvelope,
+  faFilter,
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./NavBar";
@@ -24,7 +25,8 @@ library.add(
   faBath,
   faShower,
   faSterlingSign,
-  faEnvelope
+  faEnvelope,
+  faFilter
 );
 
 const App = () => {
