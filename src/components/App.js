@@ -1,3 +1,4 @@
+import { useState } from "react";
 /* eslint-disable import/no-duplicates */
 import { Route, Routes } from "react-router-dom";
 import "../styles/app.css";
@@ -12,6 +13,7 @@ import {
   faEnvelope,
   faFilter,
   faSearch,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./NavBar";
@@ -28,15 +30,32 @@ library.add(
   faSterlingSign,
   faEnvelope,
   faFilter,
-  faSearch
+  faSearch,
+  faStar
 );
 
 const App = () => {
+  const initialState = {
+    userID: "",
+    response: {},
+  };
+  const [userID, setUserID] = useState(initialState.userID);
+  const [response, setResponse] = useState(initialState.response);
+
+  const handleLogin = (params) => {
+    setUserID(params.userID);
+    setResponse(params);
+  };
+
+  const handleLogout = () => {
+    window.FB.logout();
+    setUserID("");
+  };
   return (
     <div className="App">
-      <NavBar />
+      <NavBar userID={userID} onLogin={handleLogin} onLogOut={handleLogout} />
       <Routes>
-        <Route element={<Properties />} path="/" />
+        <Route element={<Properties userID={userID} />} path="/" />
         <Route element={<AddProperties />} path="/add-property" />
       </Routes>
     </div>

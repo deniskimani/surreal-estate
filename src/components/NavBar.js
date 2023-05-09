@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
+import FacebookLogin from "./FacebookLogin";
 
-const NavBar = () => {
+const NavBar = ({ userID, onLogin, onLogOut }) => {
   return (
     <div className="nav-bar">
       <Link className="logo" to="/">
@@ -22,6 +23,12 @@ const NavBar = () => {
           </Link>
         </li>
       </ul>
+      {userID.length === 0 && <FacebookLogin onLogin={onLogin} />}
+      {userID && (
+        <button type="submit" onClick={onLogOut} className="logout-btn">
+          Sign Out
+        </button>
+      )}
     </div>
   );
 };

@@ -29,12 +29,13 @@ a{
 .side-bar button{
     position: absolute;
     top: 15px;
-    right: 18px;
+    right: 21px;
     height: 29px;
     padding: 7px 8px;
     background-color: #774872;
     border: 1px solid #774872;
-    
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 .icon {
     color: #ffffff;

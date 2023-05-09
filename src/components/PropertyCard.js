@@ -3,6 +3,7 @@ import fort from "../assets/fort-awesome.svg";
 import "../styles/property-card.css";
 
 const PropertyCard = ({
+  _id,
   title,
   bathrooms,
   bedrooms,
@@ -10,6 +11,8 @@ const PropertyCard = ({
   type,
   email,
   price,
+  userID,
+  onSaveProperty,
 }) => {
   return (
     <div className="property-card">
@@ -39,6 +42,16 @@ const PropertyCard = ({
         >
           <FontAwesomeIcon icon="envelope" className="icons" /> Email
         </button>
+        {userID && (
+          <button
+            type="button"
+            onClick={() => onSaveProperty(_id)}
+            className="save-btn"
+          >
+            <FontAwesomeIcon icon="star" className="star" />
+            Save
+          </button>
+        )}
       </div>
     </div>
   );

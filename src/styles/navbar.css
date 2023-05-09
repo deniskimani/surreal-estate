@@ -40,3 +40,17 @@ li{
 .item:hover {
     color: #774872;
 }
+
+.logout-btn {
+    background-color: #2A3E69;
+    color: #ffff;
+    height: 50px;
+    padding: 0 20px;
+    margin-top: 10px;
+    position: absolute;
+    right: 20px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 600;
+
+}
