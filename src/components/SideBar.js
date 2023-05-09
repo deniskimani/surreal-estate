@@ -4,10 +4,17 @@ import QueryString from "qs";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SideBar = () => {
+const SideBar = ({ setShowSpinner }) => {
   const [query, setQuery] = useState("");
   const { search } = useLocation();
   const navigate = useNavigate();
+
+  function loadTimer(param) {
+    setShowSpinner(true);
+    setTimeout(() => {
+      setShowSpinner(param);
+    }, "800");
+  }
 
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = QueryString.parse(search, {
@@ -49,16 +56,41 @@ const SideBar = () => {
         </button>
       </form>
       <h4>Filter by city</h4>
-      <Link to={buildQueryString("query", { city: "Exeter" })}>Exeter</Link>
-      <Link to={buildQueryString("query", { city: "Leeds" })}>Leeds</Link>
-      <Link to={buildQueryString("query", { city: "Manchester" })}>
+      <Link
+        to={buildQueryString("query", { city: "Exeter" })}
+        onClick={() => loadTimer(false)}
+      >
+        Exeter
+      </Link>
+      <Link
+        to={buildQueryString("query", { city: "Leeds" })}
+        onClick={() => loadTimer(false)}
+      >
+        Leeds
+      </Link>
+      <Link
+        to={buildQueryString("query", { city: "Manchester" })}
+        onClick={() => loadTimer(false)}
+      >
         Manchester
       </Link>
-      <Link to="/">All cities</Link>
+      <Link to="/" onClick={() => loadTimer(false)}>
+        All cities
+      </Link>
 
       <h4>Sort By</h4>
-      <Link to={buildQueryString("sort", { price: 1 })}>Price Ascending</Link>
-      <Link to={buildQueryString("sort", { price: -1 })}>Price Descending</Link>
+      <Link
+        to={buildQueryString("sort", { price: 1 })}
+        onClick={() => loadTimer(false)}
+      >
+        Price Ascending
+      </Link>
+      <Link
+        to={buildQueryString("sort", { price: -1 })}
+        onClick={() => loadTimer(false)}
+      >
+        Price Descending
+      </Link>
     </div>
   );
 };

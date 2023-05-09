@@ -14,6 +14,7 @@ const FacebookLogin = ({ onLogin }) => {
           onLogin(data);
         }}
         onReject={(err) => {
+          // eslint-disable-next-line no-console
           console.log(err);
         }}
       >

@@ -1,0 +1,18 @@
+.loader{
+    z-index: 101;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 71px;
+}
+
+.loader .loader-img {
+    margin-top: 35vh;
+    text-align: center;
+}
+
+.hidden{
+    visibility: hidden;
+    height: 0;
+}

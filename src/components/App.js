@@ -1,6 +1,6 @@
 import { useState } from "react";
 /* eslint-disable import/no-duplicates */
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "../styles/app.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faB, faR } from "@fortawesome/free-solid-svg-icons";
@@ -14,11 +14,14 @@ import {
   faFilter,
   faSearch,
   faStar,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperties from "./AddProperties";
+import SavedProperties from "./SavedProperties";
+import Loader from "./Loader";
 
 library.add(
   faB,
@@ -31,20 +34,23 @@ library.add(
   faEnvelope,
   faFilter,
   faSearch,
-  faStar
+  faStar,
+  faTrash
 );
 
 const App = () => {
   const initialState = {
     userID: "",
-    response: {},
+    showSpinner: true,
   };
   const [userID, setUserID] = useState(initialState.userID);
-  const [response, setResponse] = useState(initialState.response);
+  const [showSpinner, setShowSpinner] = useState(initialState.showSpinner);
 
+  setTimeout(() => {
+    setShowSpinner(false);
+  }, "1300");
   const handleLogin = (params) => {
     setUserID(params.userID);
-    setResponse(params);
   };
 
   const handleLogout = () => {
@@ -53,10 +59,27 @@ const App = () => {
   };
   return (
     <div className="App">
-      <NavBar userID={userID} onLogin={handleLogin} onLogOut={handleLogout} />
+      <NavBar
+        userID={userID}
+        onLogin={handleLogin}
+        setShowSpinner={setShowSpinner}
+        onLogOut={handleLogout}
+      />
+      <Loader showSpinner={showSpinner} />
       <Routes>
-        <Route element={<Properties userID={userID} />} path="/" />
+        <Route
+          element={
+            <Properties setShowSpinner={setShowSpinner} userID={userID} />
+          }
+          path="/"
+        />
         <Route element={<AddProperties />} path="/add-property" />
+        <Route
+          element={
+            userID.length < 1 ? <Navigate to="/" /> : <SavedProperties />
+          }
+          path="/saved-properties"
+        />
       </Routes>
     </div>
   );

@@ -6,7 +6,7 @@ import "../styles/properties.css";
 import SideBar from "./SideBar";
 import Alert from "./Alert";
 
-const Properties = ({ userID }) => {
+const Properties = ({ userID, setShowSpinner }) => {
   const initialState = {
     alert: {
       message: "",
@@ -68,7 +68,7 @@ const Properties = ({ userID }) => {
 
   return (
     <div className="properties">
-      <SideBar />
+      <SideBar setShowSpinner={setShowSpinner} />
 
       <div className="properties-first-child">
         <h3>Available Properties</h3>
